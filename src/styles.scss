@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+$lightGray: hsl(223, 19%, 93%);
+$veryLightGray: hsl(228, 33%, 97%);
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+
+  background-color: $veryLightGray;
+}

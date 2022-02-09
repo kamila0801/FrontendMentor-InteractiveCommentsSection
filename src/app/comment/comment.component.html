@@ -1,0 +1,34 @@
+<div class="container" *ngIf="thisComment">
+
+    <div class="vote-box">
+        <img class="icon" src="/assets/images/icon-plus.svg" alt="plus">
+        <p class="score">{{thisComment.score}}</p>
+        <img class="icon" src="/assets/images/icon-minus.svg" alt="minus">
+    </div>
+
+    <div class="content">
+        <div class="top-bar">
+          <div class="user-data inline">
+            <img class="avatar" [src]="thisComment.user.image.png">
+            <span class="username blue-text">{{thisComment.user.username}}</span>
+            <span class="you-tag" *ngIf="currentUser && thisComment.user.username==currentUser.username">you</span>
+            <span class="time">{{thisComment.createdAt}}</span>
+          </div>
+
+          <div class="reply inline">
+            <img class="icon" src="/assets/images/icon-reply.svg" alt="reply">
+            <span class="reply">Reply</span>
+          </div>
+
+        </div>
+
+        <div class="text">{{thisComment.content}}</div>
+    </div>
+
+</div>
+<!--REPLIES-->
+<div *ngIf="thisComment && thisComment.replies.length>0">
+  <div *ngFor="let reply of thisComment.replies">
+    <app-reply [thisReply]="reply"></app-reply>
+  </div>
+</div>

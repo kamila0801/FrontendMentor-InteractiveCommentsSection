@@ -1,0 +1,31 @@
+<div class="main" *ngIf="thisReply">
+  <div class="tab"></div>
+  <div class="container">
+
+    <div class="vote-box inline">
+      <img class="icon" src="/assets/images/icon-plus.svg" alt="plus">
+      <p class="score">{{thisReply.score}}</p>
+      <img class="icon" src="/assets/images/icon-minus.svg" alt="minus">
+    </div>
+
+    <div class="content inline">
+      <div class="top-bar">
+        <div class="user-data inline">
+          <img class="avatar" [src]="thisReply.user.image.png">
+          <span class="username blue-text">{{thisReply.user.username}}</span>
+          <span class="you-tag" *ngIf="currentUser && thisReply.user.username==currentUser.username">you</span>
+          <span class="time">{{thisReply.createdAt}}</span>
+        </div>
+
+        <div class="reply inline">
+          <img class="icon" src="/assets/images/icon-reply.svg" alt="reply">
+          <span class="reply purple-text">Reply</span>
+        </div>
+      </div>
+
+      <div class="text"><span class="replying-to">@{{thisReply.replyingTo}}</span> {{thisReply.content}}</div>
+    </div>
+
+  </div>
+</div>
+
