@@ -31,7 +31,8 @@ Users should be able to:
 
 ### Screenshots
 
-![](/Users/kamila/Documents/Web development/FrontendMentor-InteractiveCommentsSection/src/assets/screenshots/desktop.png)
+<img width="687" alt="desktop" src="https://user-images.githubusercontent.com/71661786/153307606-7a8f36c0-d7c8-4001-9337-6a5fb76b9bbb.png">
+
 
 ### Link
 
