@@ -1,5 +1,5 @@
 <div class="container" *ngIf="currentUser">
     <img class="avatar" [src]="currentUser.image.png">
-    <input type="text" placeholder="Add a comment..." class="add-comment">
-    <div class="send-btn">SEND</div>
+    <input placeholder="Add a comment..." class="add-comment" [(ngModel)]="content">
+    <div class="send-btn" (click)="addComment()">SEND</div>
 </div>

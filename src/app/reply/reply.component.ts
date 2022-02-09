@@ -19,4 +19,15 @@ export class ReplyComponent implements OnInit {
     this.currentUser = this.service.getCurrentUser();
   }
 
+  voteUp() {
+    if(this.thisReply) this.thisReply.score++;
+  }
+
+  voteDown() {
+    if(this.thisReply) this.thisReply.score--;
+  }
+
+  deleteReply() {
+    if(this.thisReply) this.service.deleteReply(this.thisReply.id)
+  }
 }

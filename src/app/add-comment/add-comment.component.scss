@@ -32,6 +32,8 @@ $white: hsl(0, 0%, 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .avatar {
@@ -47,3 +49,5 @@ $white: hsl(0, 0%, 100%);
   width: 30vw;
   border-radius: 10px;
 }
+
+

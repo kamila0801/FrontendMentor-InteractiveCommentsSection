@@ -10,6 +10,7 @@ import {CommentsService} from "../comments.service";
 export class AddCommentComponent implements OnInit {
 
   currentUser: User | undefined;
+  content: string = "";
 
   constructor(private service: CommentsService) { }
 
@@ -17,4 +18,8 @@ export class AddCommentComponent implements OnInit {
     this.currentUser = this.service.getCurrentUser();
   }
 
+  addComment() {
+    if (this.content.length>0) this.service.addComment(this.content);
+    this.content = '';
+  }
 }

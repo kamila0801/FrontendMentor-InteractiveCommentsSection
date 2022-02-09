@@ -3,9 +3,9 @@
   <div class="container">
 
     <div class="vote-box inline">
-      <img class="icon" src="/assets/images/icon-plus.svg" alt="plus">
+      <img class="icon" src="/assets/images/icon-plus.svg" alt="plus" (click)="voteUp()">
       <p class="score">{{thisReply.score}}</p>
-      <img class="icon" src="/assets/images/icon-minus.svg" alt="minus">
+      <img class="icon" src="/assets/images/icon-minus.svg" alt="minus" (click)="voteDown()">
     </div>
 
     <div class="content inline">
@@ -15,6 +15,12 @@
           <span class="username blue-text">{{thisReply.user.username}}</span>
           <span class="you-tag" *ngIf="currentUser && thisReply.user.username==currentUser.username">you</span>
           <span class="time">{{thisReply.createdAt}}</span>
+        </div>
+
+        <div class="delete inline" *ngIf="currentUser && thisReply.user.username==currentUser.username"
+        (click)="deleteReply()">
+          <img class="icon" src="/assets/images/icon-delete.svg" alt="delete">
+          <span class="delete">Delete</span>
         </div>
 
         <div class="reply inline">

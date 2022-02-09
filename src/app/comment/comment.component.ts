@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Comment } from "../dtos/comment";
-import {Reply} from "../dtos/reply";
 import {User} from "../dtos/user";
 import {CommentsService} from "../comments.service";
 
@@ -19,4 +18,15 @@ export class CommentComponent implements OnInit {
     this.currentUser = this.service.getCurrentUser();
   }
 
+  voteUp() {
+    if(this.thisComment) this.thisComment.score++;
+  }
+
+  voteDown() {
+    if(this.thisComment) this.thisComment.score--;
+  }
+
+  deleteComment() {
+    if(this.thisComment) this.service.deleteComment(this.thisComment.id)
+  }
 }

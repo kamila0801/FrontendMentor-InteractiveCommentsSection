@@ -1,9 +1,9 @@
 <div class="container" *ngIf="thisComment">
 
     <div class="vote-box">
-        <img class="icon" src="/assets/images/icon-plus.svg" alt="plus">
+        <img class="icon" src="/assets/images/icon-plus.svg" alt="plus" (click)="voteUp()">
         <p class="score">{{thisComment.score}}</p>
-        <img class="icon" src="/assets/images/icon-minus.svg" alt="minus">
+        <img class="icon" src="/assets/images/icon-minus.svg" alt="minus" (click)="voteDown()">
     </div>
 
     <div class="content">
@@ -13,6 +13,12 @@
             <span class="username blue-text">{{thisComment.user.username}}</span>
             <span class="you-tag" *ngIf="currentUser && thisComment.user.username==currentUser.username">you</span>
             <span class="time">{{thisComment.createdAt}}</span>
+          </div>
+
+          <div class="delete inline" *ngIf="currentUser && thisComment.user.username==currentUser.username"
+               (click)="deleteComment()">
+            <img class="icon" src="/assets/images/icon-delete.svg" alt="delete">
+            <span class="delete">Delete</span>
           </div>
 
           <div class="reply inline">

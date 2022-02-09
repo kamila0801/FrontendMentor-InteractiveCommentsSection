@@ -14,11 +14,31 @@ export class CommentsService {
 
   constructor() { }
 
-  public getComments(): Comment[] {
+  getComments(): Comment[] {
     return this.comments;
   }
 
-  public getCurrentUser(): User {
+  getCurrentUser(): User {
     return this.currentUser;
+  }
+
+  addComment(content: string) {
+    let comment = {
+      id: this.comments.length,
+      content: content,
+      createdAt: '1 minute ago',
+      score: 0,
+      user: this.currentUser,
+      replies: []
+    };
+    this.comments.push(comment);
+  }
+
+  deleteComment(id: number) {
+    this.comments.splice(id, 1);
+  }
+
+  deleteReply(id: number) {
+
   }
 }
