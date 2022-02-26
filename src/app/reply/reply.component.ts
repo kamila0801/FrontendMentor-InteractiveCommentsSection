@@ -11,6 +11,7 @@ import {CommentsService} from "../comments.service";
 export class ReplyComponent implements OnInit {
 
   @Input() thisReply: Reply | undefined;
+  @Input() originalCommentId: number | undefined;
   currentUser: User | undefined;
 
   constructor(private service: CommentsService) { }
@@ -28,6 +29,7 @@ export class ReplyComponent implements OnInit {
   }
 
   deleteReply() {
-    if(this.thisReply) this.service.deleteReply(this.thisReply.id)
+    if(this.thisReply && this.originalCommentId)
+      this.service.deleteReply(this.thisReply.id, this.originalCommentId);
   }
 }

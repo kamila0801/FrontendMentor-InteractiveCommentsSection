@@ -1,1 +1,9 @@
-<p>add-reply works!</p>
+<div class="main">
+  <div class="tab"></div>
+  <div class="container" *ngIf="currentUser && replyingTo">
+    <img class="avatar" [src]="currentUser.image.png">
+    <textarea class="add-comment" [(ngModel)]="content"></textarea>
+    <div class="send-btn" (click)="addReply()">REPLY</div>
+  </div>
+</div>
+

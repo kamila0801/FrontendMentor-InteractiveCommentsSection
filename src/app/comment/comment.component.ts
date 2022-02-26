@@ -10,12 +10,17 @@ import {CommentsService} from "../comments.service";
 })
 export class CommentComponent implements OnInit {
   @Input() thisComment: Comment | undefined;
+  username: string = '';
   currentUser: User | undefined;
+
+
+  replying: boolean = false;
 
   constructor(private service: CommentsService) { }
 
   ngOnInit(): void {
     this.currentUser = this.service.getCurrentUser();
+    if(this.thisComment && this.thisComment.user) this.username = this.thisComment.user.username;
   }
 
   voteUp() {
@@ -28,5 +33,9 @@ export class CommentComponent implements OnInit {
 
   deleteComment() {
     if(this.thisComment) this.service.deleteComment(this.thisComment.id)
+  }
+
+  toggleReplying(isReplying : boolean) {
+    this.replying = isReplying;
   }
 }

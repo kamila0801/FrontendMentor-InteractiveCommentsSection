@@ -21,9 +21,9 @@
             <span class="delete">Delete</span>
           </div>
 
-          <div class="reply inline">
+          <div class="reply inline" (click)="toggleReplying(true)">
             <img class="icon" src="/assets/images/icon-reply.svg" alt="reply">
-            <span class="reply">Reply</span>
+            <span class="reply_text">Reply</span>
           </div>
 
         </div>
@@ -32,9 +32,16 @@
     </div>
 
 </div>
+
+<!--REPLYING-->
+<div *ngIf="replying && thisComment">
+  <app-add-reply [replyingTo]="username" [originalCommentId]="thisComment.id"
+                 (replying)="toggleReplying($event)"></app-add-reply>
+</div>
+
 <!--REPLIES-->
 <div *ngIf="thisComment && thisComment.replies.length>0">
   <div *ngFor="let reply of thisComment.replies">
-    <app-reply [thisReply]="reply"></app-reply>
+    <app-reply [thisReply]="reply" [originalCommentId]="thisComment.id"></app-reply>
   </div>
 </div>

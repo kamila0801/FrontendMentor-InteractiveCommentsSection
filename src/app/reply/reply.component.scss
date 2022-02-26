@@ -77,10 +77,11 @@ $white: hsl(0, 0%, 100%);
   padding: 1rem;
 }
 
-.reply {
+.reply, .reply_text {
   padding-left: 0.5rem;
   color: $moderateBlue;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .avatar {
@@ -97,6 +98,8 @@ $white: hsl(0, 0%, 100%);
   background-color: $moderateBlue;
   height: 0;
   border-radius: 10px;
+
+  padding: 0.8rem !important;
 
   display: flex;
   align-items: center;

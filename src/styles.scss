@@ -2,7 +2,7 @@ $lightGray: hsl(223, 19%, 93%);
 $veryLightGray: hsl(228, 33%, 97%);
 
 html {
-    font-size: 100%;
+    font-size: 90%;
     box-sizing: border-box;
 }
 
@@ -11,12 +11,12 @@ html {
 }
 
 body {
-  margin: 0;
+  margin-block: 3vh;
   padding: 0;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
-  align-items: center;
 
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
